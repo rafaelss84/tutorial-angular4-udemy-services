@@ -1,5 +1,5 @@
 import { LoggingService } from "app/logging.service";
-import { Injectable } from "@angular/core";
+import { Injectable, EventEmitter } from "@angular/core";
 
 // Esta anotação deve ser usada apenas no local onde
 // queremos injetar algo
@@ -19,6 +19,7 @@ export class AccountsService {
       status: 'unknown'
     }
   ];
+  statusUpdated = new EventEmitter<string>();
 
   constructor(private loggingService: LoggingService){}
 
